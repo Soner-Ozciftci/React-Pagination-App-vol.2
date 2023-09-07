@@ -13,7 +13,7 @@ function App() {
       const data = await res.json()
         console.log(data)  
         setLoading(false)
-        setUsers(data.result)
+        setUsers(data.results)
     };
     fetchUsers()
   },[]);

@@ -5,7 +5,14 @@ function users({users,page}) {
     const startIndex = (page - 1) * 10;
     const selectedUsers = users.slice(startIndex, startIndex + 10)
   return (
-    <div>users</div>
+    <div className='usersContainer'>
+      {
+selectedUsers.map((user) => (
+<User user={user} key={user.login.uuid} />
+  ))
+
+      }
+    </div>
   )
 }
 
