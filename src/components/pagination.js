@@ -1,12 +1,12 @@
 import React from 'react'
 
-function pagination({totalPages}) {
+function pagination({totalPages,handleClick}) {
     const pages = [...Array(totalPages).keys()].map(num => num + 1)
     console.log(pages)
   return (
     <div>
         {pages.map((num => (
-            <button>{num}</button>
+            <button onClick={()=> handleClick(num)}>{num}</button>
         )))}
     </div>
   )

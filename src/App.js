@@ -27,6 +27,7 @@ const handleClick = num => {
   return (
   <div>
 <h1>Pagination App</h1>
+<h5>Page : {page}</h5>
 {
   loading ? <p>Loading...</p> : <>
 <Users users={users} page={page}/>
