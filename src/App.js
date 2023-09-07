@@ -5,13 +5,27 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchusers = async () => {
-      const res = await fetch("https://randomuser.me/api/?page=1&results=50&nat=us")
-      ;
+    const fetchUsers = async () => {
+      setLoading(true)
+      const res = await fetch("https://randomuser.me/api/?page=1&results=50&nat=us");
+      const data = await res.json()
+        console.log(data)  
+        setLoading(false)
+        setUsers(data.result)
     };
-  });
+    fetchUsers()
+  },[]);
 
-  return <div>Pagination App</div>;
+  return (
+  <div>
+<h1>Pagination App</h1>
+{
+  loading ? <p>Loading...</p> : <>
+  <h1>Data</h1>
+  </>
+}
+    </div>
+)
 }
 
 export default App;
