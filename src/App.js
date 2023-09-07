@@ -26,6 +26,7 @@ const handleClick = num => {
 
   return (
   <div>
+    <br />
 <h1>Pagination App</h1>
 <h5>Page : {page}</h5>
 {
