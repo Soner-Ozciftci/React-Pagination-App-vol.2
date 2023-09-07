@@ -1,9 +1,12 @@
 import React from 'react'
 
-
-function user() {
+function user({user}) {
   return (
-    <div>user</div>
+    <div className='userContainer'>
+      <img src={user.picture.large}/>
+      <p>{`Full Name : ${user.name.first} ${user.name.last}`}</p>
+      <p>{`Phone : ${user.phone}`}</p>
+    </div>
   )
 }
 
