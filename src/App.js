@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Users from './components/users';
+import Pagination from "./components/pagination";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page,setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(5);
 
   useEffect(() => {
     const fetchUsers = async () => {
