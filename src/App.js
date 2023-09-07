@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import Users from './components/users';
 
 function App() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page,setPage] = useState(1);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -21,7 +23,7 @@ function App() {
 <h1>Pagination App</h1>
 {
   loading ? <p>Loading...</p> : <>
-  <h1>Data</h1>
+<Users users={users} page={page}/>
   </>
 }
     </div>
