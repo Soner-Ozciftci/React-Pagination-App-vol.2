@@ -20,12 +20,17 @@ function App() {
     fetchUsers()
   },[]);
 
+const handleClick = num => {
+  setPage(num);
+}
+
   return (
   <div>
 <h1>Pagination App</h1>
 {
   loading ? <p>Loading...</p> : <>
 <Users users={users} page={page}/>
+<Pagination totalPages={totalPages} handleClick={handleClick}/>
   </>
 }
     </div>
